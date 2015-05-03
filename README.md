@@ -3,7 +3,8 @@ A quickstart tutorial application written in Rails 4 + bootstrap to illustrate t
 
 Syntax highlighting done via [redcarpet](https://github.com/vmg/redcarpet) and [rouge](https://github.com/jneen/rouge).
 
-![Ooh! Pretty!](http://puu.sh/htYFn/1d9afd6b3e.png)
+![Ooh! Pretty!](http://puu.sh/hAvIQ/64edf65493.png)
+![Really!](http://puu.sh/hAvKH/bec6c28b3c.png)
 
 ## Requirements
 - Rails 4+
