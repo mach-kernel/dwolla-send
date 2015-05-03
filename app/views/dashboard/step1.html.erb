@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "application" %>
+
+<div class="container">
+	<div class="row">
+		<%= form_for(:payment, :url => {:controller => 'dashboard', :action => 'send_money'}) do |f| %>
+			<div class="col-md-6 col-lg-6">
+				<h2 class="page-header">Select a Funding Source</h2>
+				<%= f.collection_select :fundsSource, @fs, :last, :first, {}, :class => 'form-control' %>
+				<hr />
+				<h5 class="well well-sm text-center">Funding sources with the <em>FiSync</em> <span class="code">ProcessingType</span> are performed in realtime!</h5>
+				<p><%== Parser.md.render(@fsjson).html_safe %></p>
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<h2 class="page-header">Send Money</h2>
+				<div class="row">
+					<div class="col-md-8 col-xs-8">
+						<p><%= f.text_field :destinationId, class: 'form-control', :placeholder => 'Destination ID or E-Mail' %></p>
+					</div>
+					<div class="col-md-4 col-xs-4">
+						<p><%= f.number_field :amount, min: 0.01, max: 5000, :step => 'any', class: 'form-control', :placeholder => 'Amount' %></p>
+					</div>
+				</div>
+				<hr />
+				<%= f.submit "Send Money", class: "btn btn-primary btn-block" %>
+			</div>
+		<% end %>
+	</div>
+</div>
