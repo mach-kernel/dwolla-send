@@ -37,8 +37,10 @@ class DashboardController < ApplicationController
 	end
 
 	def send_money
-		if params[:commit] == "Send Money"
-
+		if not_configured?
+			render 'notconf'
+		elsif params[:commit] == "Send Money"
+			
 			# Set other necessities
 			params[:payment][:pin] = DwollaVars.pin
 			params[:payment][:destinationType] = is_email?(params[:payment][:destinationId]) ? "Email" : "Dwolla"
