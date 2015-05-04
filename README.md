@@ -102,17 +102,6 @@ Heroku is in the name of the repo, right?
     echo "gem 'rails_12factor'" >> Gemfile
     bundle install
     ```
-    
-    And now, let's edit `config/initializers/dwollavars.rb` to change our callback URI to something appropriate (your instance's publically facing hostname is a good idea, but do not remove `dashboard/handle_oauth`)!
-    ```ruby
-	module DwollaVars
-		...
-	
-		@@redirect ||= "http://localhost:3000/dashboard/handle_oauth"
-		
-		...
-	end
-    ```
 
 4. Drop back to your local machine's shell and change to the application directory
 
@@ -133,6 +122,11 @@ heroku ps:scale web=1
 ```
 
 That wasn't so bad, was it?
+
+## I'm getting an upset cat
+![Sad](http://puu.sh/hAw9l/4310b6f3cd.jpg)
+
+Edit `dwollavars.rb`!
 
 ## Credits
 
