@@ -1,5 +1,5 @@
-# dwolla-whitelabel
-A quickstart tutorial application written in Rails 4 + bootstrap to illustrate the whitelabel UX flow, without the traditional `https://dwolla.com` environment. 
+# dwolla-send
+A quickstart tutorial application written in Rails 4 + bootstrap to illustrate the send UX flow, without the traditional `https://dwolla.com` environment. 
 
 Syntax highlighting done via [redcarpet](https://github.com/vmg/redcarpet) and [rouge](https://github.com/jneen/rouge).
 
@@ -19,8 +19,8 @@ This application does not require any database access as all the data is process
 The default application key and secret bundled with the application are for you to use with the UAT environment, so you can just run it!
 
 ```bash
-git clone https://github.com/mach-kernel/dwolla-whitelabel.git
-cd dwolla-whitelabel
+git clone https://github.com/mach-kernel/dwolla-send.git
+cd dwolla-send
 bundle install && rails s
 ```
 
@@ -38,11 +38,11 @@ module DwollaVars
 
 	@@Dwolla ||= Dwolla
 	
-	@@Dwolla::api_key ||= "bXTSJDHveBHltmu95EM7a6gt6zdRmPJnQgJP774ev+Bc02sEnf"
-	@@Dwolla::api_secret ||= "v0OG0MCM9eEHeNuC/QAQ89B6s2VcwyjEHgJuBd0e6Lp2sUyIkU"
+	@@Dwolla::api_key ||= nil
+	@@Dwolla::api_secret ||= nil
 
-	@@Dwolla::token ||= "q58Z92xpws58yKn9iWW77sOnsSGL3QDIOCo1c4zLtrOxxuCoZW"
-	@@pin ||= 1337
+	@@Dwolla::token ||= nil
+	@@pin ||= nil
 
 	@@Dwolla::sandbox ||= true
 end
